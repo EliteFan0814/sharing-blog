@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>© xiedaimala.com 2018 wechat: xiedaimala01</p>
+    <p> 范培超个人 vue.js 项目 2019</p>
   </footer>
 </template>
 
