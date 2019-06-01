@@ -75,6 +75,7 @@ const router =  new Router({
     {
       path: '/edit/:blogId',
       component: () => import('@/pages/Edit/template.vue'),
+      // 路由元信息，记录是否需要登陆
       meta: { requiresAuth: true }
     },
     {
@@ -97,10 +98,13 @@ const router =  new Router({
     }
   ]
 })
-
+// 全局前置守卫
 router.beforeEach((to, from, next) => {
+  // 检测目的路径的路由元信息：是否需要登陆
   if (to.matched.some(record => record.meta.requiresAuth)) {
+    // 分发 actions ：检测登陆状态，此处必须使用 checkLogin 获取登陆状态
     store.dispatch('checkLogin').then(isLogin=>{
+      // 如果未登陆，跳转到注册页，登陆后再重定向到之前请求的页面
       if (!isLogin) {
         next({
           path: '/login',
