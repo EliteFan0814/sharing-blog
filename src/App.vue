@@ -62,8 +62,11 @@ export default {
       padding-left: 10px;
       padding-right: 10px;
     }
-  }
 
+    #login input, #register input {
+    width: 299px;
+}
+  }
 }
 
 

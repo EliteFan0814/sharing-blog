@@ -15,6 +15,7 @@ export default {
     this.page = this.$route.query.page || 1
     blog.getBlogsByUserId(this.userId, { page: this.page })
       .then(res => {
+        console.log('=====')
         console.log(res)
         this.page = res.page
         this.total = res.total

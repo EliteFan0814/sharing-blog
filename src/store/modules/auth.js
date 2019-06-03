@@ -46,9 +46,10 @@ const actions = {
   async checkLogin({ commit, state}) {
     // 未刷新页面时，可以直接用 state.isLogin 判断
     if(state.isLogin) return true
-    // 刷新页面时，则 state 恢复初始值，需要 axios 向服务器发出请求获取登录状态
+    // 刷新页面时，则 state 恢复初始值，需要 axios 向服务器发出请求来获取登录状态
     let res = await auth.getInfo()
     commit('setLogin', { isLogin: res.isLogin })
+    // 若检测到未登录则返回 false
     if(!res.isLogin) return false
     commit('setUser', { user: res.data })
     return true

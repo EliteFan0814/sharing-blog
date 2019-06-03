@@ -1,8 +1,7 @@
 <template>
   <header :class="{login: isLogin, 'no-login': !isLogin}">
     <template v-if="!isLogin">
-      <h1>Let's share</h1>
-      <p>精品博客汇聚</p>
+      <h1><img src="../assets/sharing.png" alt="logo"></h1>
       <div class="btns">
         <router-link to="/login">
           <el-button>立即登录</el-button>
@@ -12,9 +11,10 @@
         </router-link>
       </div>
     </template>
+
     <template v-if="isLogin">
       <h1>
-        <router-link to="/">Let's share</router-link>
+        <router-link to="/"><img src="../assets/sharing.png" alt="logo"></router-link>
       </h1>
       <router-link to="/create">
         <i class="edit el-icon-plus"></i>
@@ -68,16 +68,16 @@ export default {
 @import "../assets/base.less";
 
 header.no-login {
-  padding: 0 12% 30px 12%;
+  padding: 10px 5%;
   background: @bgColor;
   display: grid;
-  justify-items: center;
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    margin: 60px 0 0 0;
-    text-transform: uppercase;
+  grid-template-columns: 50% 50%;
+  h1{
+    margin: 0;
+    img{
+      display: block;
+      width: 80px;
+    }
   }
 
   p {
@@ -85,10 +85,11 @@ header.no-login {
     color: #fff;
   }
 
-  .btns {
-    margin-top: 20px;
+  .btns a{
+    display: block;
+    float: right;
   }
-
+  
   button {
     margin: 20px 5px 0;
   }
@@ -96,16 +97,18 @@ header.no-login {
 
 header.login {
   display: flex;
+  padding: 10px 5%;
   align-items: center;
   background: @bgColor;
 
   h1 {
     margin: 0;
     padding: 0;
-    font-size: 40px;
-    text-transform: uppercase;
     flex: 1;
-
+    img{
+      display: block;
+      width: 50px;
+    }
     a {
       color: #fff;
     }
@@ -155,4 +158,18 @@ header.login {
     }
   }
 }
+
+@media(max-width: 768px){
+  .btns a{
+    display: block;
+    float: none;
+  }
+  .el-button{
+    padding: 5px;
+  }
+  header.no-login button{
+    margin: 30px 5px 0;
+  }
+  }
+  
 </style>

@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p> 范培超个人 vue.js 项目 2019</p>
+    <p>与世界共享你的想法 · 范培超个人项目 · 基于 Vue</p>
   </footer>
 </template>
 

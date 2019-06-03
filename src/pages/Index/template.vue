@@ -12,6 +12,7 @@
     </section>
     <section class="pagination">
       <el-pagination
+        background
         layout="prev, pager, next"
         :total="total"
         :current-page="page"

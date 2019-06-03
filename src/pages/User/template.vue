@@ -9,7 +9,7 @@
         <div class="date">
           <span class="day">{{splitDate(blog.createdAt).date}}</span>
           <span class="month">{{splitDate(blog.createdAt).month}}月</span>
-          <span class="year">{{splitDate(blog.createdAt).year}}</span>
+          <span class="year">{{splitDate(blog.createdAt).year}}年</span>
         </div>
         <h3>{{blog.title}}</h3>
         <p>{{blog.description}}</p>
@@ -17,6 +17,7 @@
     </section>
     <section class="pagination">
       <el-pagination
+        background
         layout="prev, pager, next"
         :total="total"
         :current-page="page"
