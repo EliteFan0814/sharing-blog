@@ -66,9 +66,6 @@ export default {
     #login input, #register input {
       width: 300px;
     }
-    // #main #index section{
-    //   width: 95%;
-    // }
   }
 }
 
