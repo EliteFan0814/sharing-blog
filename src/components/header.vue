@@ -1,7 +1,7 @@
 <template>
   <header :class="{login: isLogin, 'no-login': !isLogin}">
     <template v-if="!isLogin">
-      <h1><img src="../assets/sharing.png" alt="logo"></h1>
+      <h1><router-link to="/"><img src="../assets/sharing.png" alt="logo"></router-link></h1>
       <div class="btns">
         <router-link to="/login">
           <el-button>立即登录</el-button>
@@ -160,9 +160,9 @@ header.login {
 }
 
 @media(max-width: 768px){
-  .btns a{
+  header.no-login .btns a{
     display: block;
-    float: none;
+    float: right;
   }
   .el-button{
     padding: 5px;

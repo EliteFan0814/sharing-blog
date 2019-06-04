@@ -33,7 +33,7 @@ export default {
   grid-template-columns: 12% auto 12%;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header header header"
-                       ".      main  ."
+                       ". main ."
                        "footer footer footer";
 
   #header {
@@ -64,7 +64,7 @@ export default {
     }
 
     #login input, #register input {
-    width: 299px;
+    width: 300px;
 }
   }
 }
