@@ -164,11 +164,11 @@ header.login {
     display: block;
     float: right;
   }
-  .el-button{
-    padding: 5px;
+  header.no-login .el-button{
+    padding: 8px 18px;
   }
   header.no-login button{
-    margin: 30px 5px 0;
+    margin: 5px 5px 0;
   }
   }
   
